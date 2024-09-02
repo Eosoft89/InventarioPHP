@@ -84,5 +84,16 @@
             </table>
         </div>';
 
+        if($dataCount >= 1 && $page <= $nPages){
+            $table .= 
+                '<p class="has-text-right">Mostrando usuarios <strong>'. $pagStart .'</strong> al <strong>' . $pagEnd .'</strong> de un <strong>total de '. $dataCount . '</strong></p>';
+        }
+
+    $connection = null;
     echo $table;
+    
+    if($dataCount >= 1 && $page <= $nPages){
+        echo PaginadorTablas($page, $nPages, $url, 5);
+    }
+
 ?>
